@@ -1,6 +1,8 @@
-package OOP_1;
+// package OOP_1;
 
 import java.util.List;
+import java.util.List;
+import java.util.Scanner;
 
 public class VendingMachine {
 
@@ -19,12 +21,24 @@ public class VendingMachine {
     }
     
 
-    void getProduct (String name) {
-
+    static Product getProduct (String name, List <Product> listProd) {
+        int count = 0;
+        Product productForSale = new Product("", 0);
+        for (Product i : listProd) {
+            if (i.getName().equals(name)) {
+                System.out.println(i);
+                count++;
+                productForSale = i;
+            }
+        }
+        if (count==0) {
+            System.out.println("Продукт не найден!");
+        }
+        return productForSale;
     }
 
     void restore () {
-        System.out.println("Произведите оплату");
+        System.out.println("Произведите оплату! (введите сумму)");
     }
 
 }
