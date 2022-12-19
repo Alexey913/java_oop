@@ -1,4 +1,4 @@
-package OOP_1;
+// package OOP_1;
 
 public class MachineComplete extends VendingMachine {
 
@@ -7,6 +7,6 @@ public class MachineComplete extends VendingMachine {
     
     @Override
     void restore() {
-        System.out.println("Заберите продукт");
+        System.out.println ("Заберите продукт!");
     }
 }
