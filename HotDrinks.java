@@ -19,7 +19,7 @@ public class HotDrinks extends Drinks {
 
     @Override
     public String toString() {
-        return super.toString() + ". Темп." + getTemperature() + " C";
+        return super.toString() + ". Темп. " + getTemperature() + " C";
     }
 
 }

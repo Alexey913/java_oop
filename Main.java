@@ -29,7 +29,8 @@ public class Main {
         for (Product prod : listProduct) {
             System.out.println(prod);
         }
-        Scanner gp = new Scanner(System.in);
+        String encoding = System.getProperty("console.encoding", "cp866");
+        Scanner gp = new Scanner(System.in, encoding);
         System.out.println("Введите название продукта");
         String name = gp.nextLine();
         
@@ -74,33 +75,34 @@ public class Main {
         }
         
         HotDrinksVendingMachine machineForName = new HotDrinksVendingMachine();
-        HotDrinksVendingMachine machineForParametrs = new HotDrinksVendingMachine();
-       
+        HotDrinksVendingMachine machineForParametres = new HotDrinksVendingMachine();
+        HotDrinksVendingMachine machineComplete = new HotDrinksMachineComplete();
+        HotDrinksVendingMachine machineError = new HotDrinksMachineError();
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите пункт меню:\n1-Выбрать напиток по названию\n2-Выбрать напиок по параметрам");
         int answer = sc.nextInt();
-        int check = 1;
+        int check = 0;
         switch(answer) {
             case 1:
                 String nameHot = machineForName.enterData("название");
                 hotDrinksForSale = machineForName.getProduct (nameHot);
                 for (HotDrinks hot : listHotDrinks) {
                     if (nameHot.equals(hot.getName())) {
+                        hotDrinksForSale.setName(hot.getName());
                         hotDrinksForSale.setPrice(hot.getPrice());
                         hotDrinksForSale.setVolume(hot.getVolume());
                         hotDrinksForSale.setTemperature(hot.getTemperature());
-                        check = 1;
-                    }
-                    else {
-                        check = 0;
+                        check++;
                     }
                 }
                 break;
+            
             case 2:     
-                nameHot = machineForParametrs.enterData("название");
-                String volumeHot = machineForParametrs.enterData("объем");
-                String temperature = machineForParametrs.enterData("температуру");
-                hotDrinksForSale = machineForParametrs.getProduct (nameHot, Double.parseDouble(volumeHot), Integer.parseInt(temperature), listHotDrinks);
+                nameHot = machineForParametres.enterData("название");
+                String volumeHot = machineForParametres.enterData("объем");
+                String temperature = machineForParametres.enterData("температуру");
+                hotDrinksForSale = machineForParametres.getProduct (nameHot, Double.parseDouble(volumeHot), Integer.parseInt(temperature), listHotDrinks);
                 break;
             default:
                 System.out.println("Неверный ввод!");
@@ -113,10 +115,10 @@ public class Main {
             machineForName.restore();
             int price = sc.nextInt();
             if (price>=hotDrinksForSale.getPrice()) {
-                machineForName.restore();
+                machineComplete.restore();
             }
             else {
-                machineForName.restore();
+                machineError.restore();
             }
         }
         

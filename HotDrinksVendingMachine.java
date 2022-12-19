@@ -18,7 +18,7 @@ public class HotDrinksVendingMachine extends VendingMachine {
         int count = 0;
         HotDrinks hotDrinksForSale = new HotDrinks("", 0, 0, 0);
         for (HotDrinks i : listHotDrinks) {
-            if (i.getName().equals(name) && (i.getTemperature()-temperature <=10 && i.getTemperature()-temperature >=-10)) {
+            if (i.getName().equals(name) && i.getVolume()>=volume && (i.getTemperature()-temperature <=10 && i.getTemperature()-temperature >=-10)) {
                 System.out.println(i);
                 count++;
                 hotDrinksForSale = i;
@@ -33,7 +33,8 @@ public class HotDrinksVendingMachine extends VendingMachine {
     
     
     static String enterData(String parametr) {
-        Scanner param = new Scanner(System.in);
+        String encoding = System.getProperty("console.encoding", "cp866");
+        Scanner param = new Scanner(System.in, encoding);
         System.out.println("Введите " + parametr + " горячего напитка");
         String data = param.nextLine();
         return data;
