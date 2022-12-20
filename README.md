@@ -4,7 +4,7 @@
 
 В классах **Product** и **VendingMachine** реализованы соответствующие классы.
 Классы **Drinks** и **Eat** - наследники класса _Product_.
-Классы **MachineError**, **MachineComplete** - наследники класса _VendingMachine+.
+Классы **MachineError**, **MachineComplete** - наследники класса _VendingMachine_.
 
 В рамках ДЗ выполнено следующее:
 Реализован класс-наследник **HotDrinks** от класса _Drinks_.
