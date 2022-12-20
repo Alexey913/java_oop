@@ -21,5 +21,4 @@ public class Drinks extends Product {
     public String toString() {
         return super.toString() + ". Объем - " + getVolume() + " мл";
     }
-
 }
