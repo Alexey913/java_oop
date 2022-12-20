@@ -44,8 +44,8 @@ public class Main {
         for (Product prod : listProduct) {
             System.out.println(prod);
         }
-        // String encoding = System.getProperty("console.encoding", "cp866");
-        Scanner gp = new Scanner(System.in/*, encoding*/);
+        String encoding = System.getProperty("console.encoding", "cp866");
+        Scanner gp = new Scanner(System.in, encoding);
         System.out.println("Введите название продукта");
         String name = gp.nextLine();
         
@@ -141,8 +141,8 @@ public class Main {
     }
     
     public static String enterData(String parametr) {
-        // String encoding = System.getProperty("console.encoding", "cp866");
-        Scanner param = new Scanner(System.in/*, encoding*/);
+        String encoding = System.getProperty("console.encoding", "cp866");
+        Scanner param = new Scanner(System.in, encoding);
         System.out.println("Введите " + parametr + " горячего напитка");
         String data = param.nextLine();
         return data;
