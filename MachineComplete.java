@@ -6,7 +6,7 @@ public class MachineComplete extends VendingMachine {
     }
     
     @Override
-    void restore() {
-        System.out.println ("Заберите продукт!");
+    void restore(String name) {
+        System.out.println ("Заберите продукт "+ name +"!");
     }
 }
