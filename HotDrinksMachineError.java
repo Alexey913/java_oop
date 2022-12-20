@@ -1,12 +1,12 @@
 // package OOP_1;
 
-public class HotDrinksMachineError extends HotDrinksVendingMachine {
+public class MachineError extends VendingMachine {
 
-    public HotDrinksMachineError() {
+    public MachineError() {
     }
     
     @Override
-    void restore() {
-        System.out.println ("Ошибка оплаты!");
+    void restore(String name) {
+        System.out.println ("Недостаточно средств для оплаты продукта " + name + "!");
     }
 }
