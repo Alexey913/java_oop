@@ -20,7 +20,5 @@ public class Eat extends Product{
     @Override
     public String toString() {
         return super.toString() + ". Вес - " + getWeigth() + " г";
-
     }
-    
 }
