@@ -21,5 +21,4 @@ public class HotDrinks extends Drinks {
     public String toString() {
         return super.toString() + ". Темп. " + getTemperature() + " C";
     }
-
 }
