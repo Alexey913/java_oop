@@ -6,7 +6,7 @@ public class MachineError extends VendingMachine {
     }
     
     @Override
-    void restore() {
-        System.out.println ("Ошибка оплаты!");
+    void restore(String name) {
+        System.out.println ("Недостаточно средств для оплаты продукта " + name + "!");
     }
 }
