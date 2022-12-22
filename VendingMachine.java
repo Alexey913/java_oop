@@ -1,8 +1,6 @@
 // package OOP_1;
 
 import java.util.List;
-import java.util.List;
-import java.util.Scanner;
 
 public class VendingMachine {
     

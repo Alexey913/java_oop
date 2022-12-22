@@ -9,6 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите категорию продукта\n1-Еда и холодные напитки\n2-Горячие напитки");
         String answer = sc.nextLine();
+        // sc.close();
         
         switch(answer) {
             case "1":
@@ -20,6 +21,7 @@ public class Main {
             default:
                 System.out.println("Неверный ввод!");
         }
+        sc.close();
     }
     
     // Метод для выдачи продукта (еда или напиток)
@@ -48,6 +50,7 @@ public class Main {
         Scanner gp = new Scanner(System.in, encoding);
         System.out.println("Введите название продукта");
         String name = gp.nextLine();
+        gp.close();
         
         Product productForSale = VendingMachine.getProduct(name, listProduct);
 
@@ -138,6 +141,7 @@ public class Main {
                 error.resultPay(hotDrinksForSale.getName());
             }
         }
+        sc.close();
     }
     
     public static String enterData(String parametr) {

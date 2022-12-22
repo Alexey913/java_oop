@@ -1,8 +1,6 @@
 // package OOP_1;
 
-import java.util.Scanner;
 import java.util.List;
-import java.util.ArrayList;
 
 public class HotDrinksVendingMachine extends VendingMachine {
     
