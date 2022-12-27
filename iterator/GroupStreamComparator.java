@@ -2,6 +2,7 @@
 // Создать класс GroupStreamComparator<GroupStream>,
 // реализующий сравнение количества групп входящих в GroupStream
 
+
 package iterator;
 
 import java.util.Comparator;

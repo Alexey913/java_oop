@@ -36,24 +36,20 @@ package service;
 
 import data.StudentGroup;
 
-
 public interface StudentGroupService {
 
 // К Д/З Семинар 2
-
     StudentGroup read();
     StudentGroup read(int groupNumber);
     void create (StudentGroup studentGroup);
 
 // К Семинару 3 - Задача 2
-
     void removeStudent (String fio);
 
 // К Семинару 3 - Задача 3
-
     void sortYear (StudentGroup studentGroup);
 
 // К Семинару 3 - Задача 4
-
     void sortToFio (StudentGroup studentGroup);
+
 }

@@ -17,7 +17,6 @@ public class TeacherServiceImpl implements DataService {
     @Override
     public void create(User user) {
         WriterToTxt.write(user);
-        
     }
 
     @Override
@@ -25,4 +24,5 @@ public class TeacherServiceImpl implements DataService {
         ReaderFromTxt.read(user);
         return user;
     }
+    
 }

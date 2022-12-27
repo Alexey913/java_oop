@@ -6,6 +6,7 @@
 // Создать класс StudentView, унаследованный от UserView, содержащий
 // в себе реализацию findTheBest
 
+
 package view;
 
 import java.util.List;

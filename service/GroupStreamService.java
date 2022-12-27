@@ -5,6 +5,7 @@
 // Модифицировать класс Controller, добавив в него метод,
 // сортирующий список потоков, путем вызова созданного сервиса
 
+
 package service;
 
 import java.util.List;
@@ -13,4 +14,5 @@ import data.GroupStream;
 
 public interface GroupStreamService {
     void sortGroupStream (List <GroupStream> groupStream);
+    
 }

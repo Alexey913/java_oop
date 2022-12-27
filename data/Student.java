@@ -35,11 +35,11 @@ public class Student extends User implements Comparable <Student> {
     }
 
 // К Семинару 3 - Задача 3
-
- @Override
- public int compareTo (Student student) {
-     if (this.getBirthYear() > student.getBirthYear()) return 1;
-     if (this.getBirthYear() < student.getBirthYear()) return -1;
-     return 0;
+    @Override
+    public int compareTo (Student student) {
+        if (this.getBirthYear() > student.getBirthYear()) return 1;
+        if (this.getBirthYear() < student.getBirthYear()) return -1;
+        return 0;
     }
+    
 }

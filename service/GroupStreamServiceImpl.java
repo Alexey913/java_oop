@@ -2,6 +2,7 @@
 // Создать класс GroupStreamServiceImpl, добавив в него метод
 // сортировки списка потоков, используя созданный GroupStreamComparator
 
+
 package service;
 
 import java.util.Collections;

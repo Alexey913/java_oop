@@ -15,7 +15,6 @@ public class WriterToTxt {
     }
 
 // К Д/З Семинар 2 (просто для практики)
-
     public static void writeStudentGroup(StudentGroup studentGroup) {
     }
 }

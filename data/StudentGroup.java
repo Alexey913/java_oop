@@ -28,24 +28,20 @@ import iterator.StudentGroupIterator;
 public class StudentGroup implements Iterable <Student> {
     
 // К Д/З Семинар 2
-
     Teacher teacher;
     List <Student> listOfStudents = new ArrayList<>();
     int groupNumber;
-
 
     public StudentGroup(Teacher teacher, List<Student> listOfStudents) {
         this.teacher = teacher;
         this.listOfStudents = listOfStudents;
     }
 
-
     public StudentGroup(Teacher teacher, List<Student> listOfStudents, int groupNumber) {
         this.teacher = teacher;
         this.listOfStudents = listOfStudents;
         this.groupNumber = groupNumber;
     }
-
 
     public Teacher getTeacher() {
         return teacher;
@@ -55,7 +51,6 @@ public class StudentGroup implements Iterable <Student> {
         this.teacher = teacher;
     }
    
-   
     public List<Student> getListOfStudents() {
         return listOfStudents;
     }
@@ -64,7 +59,6 @@ public class StudentGroup implements Iterable <Student> {
         this.listOfStudents = listOfStudents;
     }
     
-
     public int getGroupNumber() {
         return groupNumber;
     }
@@ -73,9 +67,7 @@ public class StudentGroup implements Iterable <Student> {
         this.groupNumber = groupNumber;
     }
 
-
 // К Семинару 3 - Задача 2
-
     @Override
     public Iterator<Student> iterator() {
         return new StudentGroupIterator(this);

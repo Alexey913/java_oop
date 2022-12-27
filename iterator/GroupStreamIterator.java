@@ -19,7 +19,6 @@ public class GroupStreamIterator implements Iterator <StudentGroup> {
         this.groupStream = groupStream;
     }
 
-        
     @Override
     public boolean hasNext() {
         return cursor < groupStream.size();

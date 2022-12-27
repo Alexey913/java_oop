@@ -24,13 +24,11 @@ import data.User;
 public class ReaderFromTxt {
 
 // К Семинару 2  - Задача 1.2
-
     public static User read(User user) {
         return user;
     }
 
 // К Д/З Семинар 2
-
     public static Teacher readTeacher() {
         return null;
     }

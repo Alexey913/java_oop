@@ -19,7 +19,6 @@ public class StudentGroupIterator implements Iterator <Student> {
     private List <Student> students;
     private int cursor;
 
-    
     public StudentGroupIterator(StudentGroup studentGroup) {
         this.studentGroup = studentGroup;
         // this.students = studentGroup.getListOfStudents().iterator();

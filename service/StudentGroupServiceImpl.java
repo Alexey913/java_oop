@@ -47,7 +47,6 @@ import util.ReaderFromTxt;
 public class StudentGroupServiceImpl implements StudentGroupService {
 
 // К Д/З Семинар 2
-
     @Override
     public StudentGroup read() {
         Teacher teacher = ReaderFromTxt.readTeacher();
@@ -64,7 +63,6 @@ public class StudentGroupServiceImpl implements StudentGroupService {
         return studentGroup;
     }
 
-
     @Override
     public void create(StudentGroup studentGroup) {
         // Запись группы в текстовый файл
@@ -72,7 +70,6 @@ public class StudentGroupServiceImpl implements StudentGroupService {
     }
 
 // К Семинару 3 - Задача 2
-
     @Override
     public void removeStudent(String fio) {
         Iterator <Student> studentGroup = read().iterator();
@@ -85,16 +82,15 @@ public class StudentGroupServiceImpl implements StudentGroupService {
     }
 
 // К Семинару 3 - Задача 3
-
     @Override
     public void sortYear(StudentGroup studentGroup) {
         Collections.sort(studentGroup.getListOfStudents());
     }
 
 // К Семинару 3 - Задача 4
-
     @Override
     public void sortToFio(StudentGroup studentGroup) {
         Collections.sort(studentGroup.getListOfStudents(), new UserComparator());
     }
+
 }

@@ -70,37 +70,30 @@ import service.StudentServiceImpl;
 public class Controller {
 
 // К Семинару 2
-
     private DataService studentService;
     
 // К Д/З Семинар 2
-
     private StudentGroupService studentGroupService;
 
 // К Д/З Семинар 3
-
     private GroupStreamService groupStreamService;
 
 // К Семинару 2
-    
     public Controller(StudentServiceImpl studentService) {
         this.studentService = studentService;
     }
 
 // К Д/З Семинар 2
-
     public Controller(StudentGroupService studentGroupService) {
         this.studentGroupService = studentGroupService;
     }
 
 // К Д/З Семинар 3
-
     public Controller(GroupStreamService groupStreamService) {
         this.groupStreamService = groupStreamService;
     }
 
 // К Семинару 2
-
     public Student createStudents(Student student) {
         studentService.create(student);
         studentService.read(student);
@@ -114,27 +107,23 @@ public class Controller {
     }
 
 // К Семинару 3 - Задача 2
-
     public void removeStudent (String fio) {
         studentGroupService.removeStudent(fio);
     }
 
 // К Семинару 3 - Задача 3
-
     public void sortToYear (StudentGroup studentGroup) {
         studentGroupService.sortYear(studentGroup);
     }
 
 // К Семинару 3 - Задача 4
-
     public void sortToFio (StudentGroup studentGroup) {
         studentGroupService.sortToFio(studentGroup);
     }
 
-
 // К Д/З Семинар 3
-
     public void sortStream (List <GroupStream> groupStream) {
         groupStreamService.sortGroupStream(groupStream);
     }
+
 }
