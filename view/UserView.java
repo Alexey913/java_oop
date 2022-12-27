@@ -1,4 +1,4 @@
-// Семинар 2
+// Семинар 2 - Задача 2
 // Создать абстрактный класс или интерфейс UserView,
 // содержащий в себе метод void showTheBest(List <User> userList),
 // внутри вызывающий абстрактный метод User findTheBest(List <User> userList)

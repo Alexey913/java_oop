@@ -1,9 +1,10 @@
-// Семинар 3
+// Семинар 3 - Задача 1
 // Создать класс StudentGroupIterator, заставив его реализовать интерфейс Iterator <Student>.
-// Реализовать его абстрактные методы. Реализовать метод remove()
+// Реализовать его абстрактные метод.
+// Реализовать метод remove()
 
 
-package service;
+package iterator;
 
 import java.util.Iterator;
 import java.util.List;

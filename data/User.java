@@ -1,4 +1,4 @@
-// Семинар 2
+// Семинар 2 - задача 1.1
 // Создать абстрактный класс User и его наследники Student и Teacher 
 // родитель имеет в себе общие данные (фио, год рождения, паспорт (серия и номер)),
 // а наследники - собственные параметры (номер группы для Student, кафедра для Teacher)
@@ -6,10 +6,10 @@
 package data;
 
 public abstract class User {
+    
     private String fio;
     private int birthYear;
     private long passport;
-
 
     
     public User(String fio, int birthYear, long passport) {
@@ -42,5 +42,4 @@ public abstract class User {
     public void setPassport(long passport) {
         this.passport = passport;
     }
-
 }

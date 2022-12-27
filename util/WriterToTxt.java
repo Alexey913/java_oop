@@ -1,4 +1,4 @@
-// Семинар 2
+// Семинар 2 - Задача 1.2
 // Создать классы WriterToTxt и ReaderFromTxt, имеющие
 // статичные методы для записи/чтения в/из txt.файла
 
@@ -10,15 +10,12 @@ import data.User;
 
 public class WriterToTxt {
     
-    public static void write(User user) {
-        
+// К Семинару 2
+    public static void write(User user) { 
     }
 
-// Д/З Семинар 2
-// Создать класс StudentGroupServiceImpl, в котором реализована логика чтения Студентов и Преподавателя из файла txt
-// (реализация чтения файла опциональна), создания класса StudentGroup и возвращения его (просто для практики)
+// К Д/З Семинар 2 (просто для практики)
 
     public static void writeStudentGroup(StudentGroup studentGroup) {
-        
     }
 }
