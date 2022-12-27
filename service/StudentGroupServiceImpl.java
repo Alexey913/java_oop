@@ -66,7 +66,6 @@ public class StudentGroupServiceImpl implements StudentGroupService {
     @Override
     public void create(StudentGroup studentGroup) {
         // Запись группы в текстовый файл
-        
     }
 
 // К Семинару 3 - Задача 2

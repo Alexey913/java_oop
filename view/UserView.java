@@ -21,4 +21,5 @@ public abstract class UserView {
     }
 
     protected abstract User userFindTheBest(List <User> userList);
+    
 }

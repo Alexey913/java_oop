@@ -101,7 +101,6 @@ public class Controller {
     }
 
 // К Д/З Семинар 2
-
     public StudentGroup returnGroup (int groupNumber) {
         return studentGroupService.read(groupNumber);
     }
