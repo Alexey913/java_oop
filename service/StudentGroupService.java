@@ -52,4 +52,7 @@ public interface StudentGroupService {
 // К Семинару 3 - Задача 4
     void sortByFio (StudentGroup studentGroup);
 
+// К Семинару 4 - Задача 2
+    StudentGroup saveGroup (StudentGroup studentGroup);
+    StudentGroup findGroup (Integer groupNumber);
 }

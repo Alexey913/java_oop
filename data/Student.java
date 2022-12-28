@@ -17,20 +17,20 @@ package data;
 public class Student extends User implements Comparable <Student> {
 
 // К Д/З Семинар 2
-    private String groupNumber;
+    private int groupNumber;
 
 // К Семинару 2 - Задача 1.1
-    public Student(String fio, int birthYear, long passport, String groupNumber) {
+    public Student(String fio, int birthYear, long passport, int groupNumber) {
         super(fio, birthYear, passport);
         this.groupNumber = groupNumber;
     }
 
 // К Д/З Семинар 2
-    public String getGroupNumber() {
+    public int getGroupNumber() {
         return groupNumber;
     }
 
-    public void setGroupNumber(String groupNumber) {
+    public void setGroupNumber(int groupNumber) {
         this.groupNumber = groupNumber;
     }
 

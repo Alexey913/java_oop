@@ -32,6 +32,12 @@
 // по ФИО и вызывать в нем созданный метод из StudentGroupServiceImpl
 
 
+// Семинар 4 - Задача 2
+// - Создать класс GroupRepository имплементировав его от Repository<Group, Integer>
+// - В классе StudentGroupServiceImpl добавить новую переменную Repository<Group, Integer>
+// - В классе StudentGroupServiceImpl реализовать методы сохранения группы и поиска её по номеру 
+
+
 package service;
 
 import java.util.Collections;
@@ -42,11 +48,19 @@ import data.Student;
 import data.StudentGroup;
 import data.Teacher;
 import data.comparator.UserComparator;
+import repository.Repository;
 import util.ReaderFromTxt;
 
 public class StudentGroupServiceImpl implements StudentGroupService {
 
-// К Д/З Семинар 2
+// К Семинару 4 - Задача 2
+    private final Repository <StudentGroup, Integer> studentGroupRepository;
+
+    public StudentGroupServiceImpl(Repository<StudentGroup, Integer> studentGroupRepository) {
+        this.studentGroupRepository = studentGroupRepository;
+    }
+
+    // К Д/З Семинар 2
     @Override
     public StudentGroup read() {
         Teacher teacher = ReaderFromTxt.readTeacher();
@@ -92,4 +106,14 @@ public class StudentGroupServiceImpl implements StudentGroupService {
         Collections.sort(studentGroup.getListOfStudents(), new UserComparator());
     }
 
+// К Семинару 4 - Задача 2
+    @Override
+    public StudentGroup saveGroup(StudentGroup studentGroup) {
+        return studentGroupRepository.Save(studentGroup);
+    }
+
+    @Override
+    public StudentGroup findGroup(Integer groupNumber) {
+        return studentGroupRepository.findById(groupNumber);
+    }
 }
