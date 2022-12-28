@@ -78,20 +78,22 @@ public class Controller {
 // К Д/З Семинар 3
     private GroupStreamService groupStreamService;
 
-// К Семинару 2
-    public Controller(StudentServiceImpl studentService) {
+// К Семинару 2, Д/З Семинар 2, Д/З Семинар 3
+    public Controller(StudentServiceImpl studentService, StudentGroupService studentGroupService, GroupStreamService groupStreamService) {
         this.studentService = studentService;
-    }
-
-// К Д/З Семинар 2
-    public Controller(StudentGroupService studentGroupService) {
         this.studentGroupService = studentGroupService;
-    }
-
-// К Д/З Семинар 3
-    public Controller(GroupStreamService groupStreamService) {
         this.groupStreamService = groupStreamService;
     }
+
+// // К Д/З Семинар 2
+//     public Controller(StudentGroupService studentGroupService) {
+//         this.studentGroupService = studentGroupService;
+//     }
+
+// // К Д/З Семинар 3
+//     public Controller(GroupStreamService groupStreamService) {
+//         this.groupStreamService = groupStreamService;
+//     }
 
 // К Семинару 2
     public Student createStudents(Student student) {
@@ -111,13 +113,13 @@ public class Controller {
     }
 
 // К Семинару 3 - Задача 3
-    public void sortToYear (StudentGroup studentGroup) {
-        studentGroupService.sortYear(studentGroup);
+    public void sortByYear (StudentGroup studentGroup) {
+        studentGroupService.sortByYear(studentGroup);
     }
 
 // К Семинару 3 - Задача 4
-    public void sortToFio (StudentGroup studentGroup) {
-        studentGroupService.sortToFio(studentGroup);
+    public void sortByFio (StudentGroup studentGroup) {
+        studentGroupService.sortByFio(studentGroup);
     }
 
 // К Д/З Семинар 3

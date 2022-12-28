@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 import data.GroupStream;
-import iterator.GroupStreamComparator;
+import data.comparator.GroupStreamComparator;
 
 public class GroupStreamServiceImpl implements GroupStreamService{
 

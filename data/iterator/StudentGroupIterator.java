@@ -4,7 +4,7 @@
 // Реализовать метод remove()
 
 
-package iterator;
+package data.iterator;
 
 import java.util.Iterator;
 import java.util.List;

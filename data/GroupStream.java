@@ -15,7 +15,7 @@ package data;
 import java.util.Iterator;
 import java.util.List;
 
-import iterator.GroupStreamIterator;
+import data.iterator.GroupStreamIterator;
 
 public class GroupStream implements Iterable <StudentGroup> {
 

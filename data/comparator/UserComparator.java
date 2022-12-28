@@ -6,7 +6,7 @@
 // по ФИО и вызывать в нем созданный метод из StudentGroupServiceImpl
 
 
-package iterator;
+package data.comparator;
 
 import java.util.Comparator;
 

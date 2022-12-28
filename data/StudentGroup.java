@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import iterator.StudentGroupIterator;
+import data.iterator.StudentGroupIterator;
 
 
 public class StudentGroup implements Iterable <Student> {

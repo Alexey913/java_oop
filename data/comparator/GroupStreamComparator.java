@@ -3,7 +3,7 @@
 // реализующий сравнение количества групп входящих в GroupStream
 
 
-package iterator;
+package data.comparator;
 
 import java.util.Comparator;
 

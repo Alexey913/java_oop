@@ -41,7 +41,7 @@ import java.util.List;
 import data.Student;
 import data.StudentGroup;
 import data.Teacher;
-import iterator.UserComparator;
+import data.comparator.UserComparator;
 import util.ReaderFromTxt;
 
 public class StudentGroupServiceImpl implements StudentGroupService {
@@ -82,13 +82,13 @@ public class StudentGroupServiceImpl implements StudentGroupService {
 
 // К Семинару 3 - Задача 3
     @Override
-    public void sortYear(StudentGroup studentGroup) {
+    public void sortByYear(StudentGroup studentGroup) {
         Collections.sort(studentGroup.getListOfStudents());
     }
 
 // К Семинару 3 - Задача 4
     @Override
-    public void sortToFio(StudentGroup studentGroup) {
+    public void sortByFio(StudentGroup studentGroup) {
         Collections.sort(studentGroup.getListOfStudents(), new UserComparator());
     }
 

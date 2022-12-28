@@ -47,9 +47,9 @@ public interface StudentGroupService {
     void removeStudent (String fio);
 
 // К Семинару 3 - Задача 3
-    void sortYear (StudentGroup studentGroup);
+    void sortByYear (StudentGroup studentGroup);
 
 // К Семинару 3 - Задача 4
-    void sortToFio (StudentGroup studentGroup);
+    void sortByFio (StudentGroup studentGroup);
 
 }

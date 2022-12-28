@@ -3,7 +3,7 @@
 // и реализующий интерфейс Iterable<StudentGroup>
 
 
-package iterator;
+package data.iterator;
 
 import java.util.Iterator;
 import java.util.List;
