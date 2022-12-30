@@ -20,7 +20,7 @@ import data.StudentGroup;
 public class GroupRepository implements Repository <StudentGroup, Integer> {
 
     @Override
-    public StudentGroup Save(StudentGroup entity) {
+    public StudentGroup save(StudentGroup entity) {
         return null;
     }
 

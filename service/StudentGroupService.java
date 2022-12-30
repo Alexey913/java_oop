@@ -40,8 +40,8 @@ public interface StudentGroupService {
 
 // К Д/З Семинар 2
     StudentGroup read();
-    StudentGroup read(int groupNumber);
-    void create (StudentGroup studentGroup);
+
+    StudentGroup create (StudentGroup studentGroup);
 
 // К Семинару 3 - Задача 2
     void removeStudent (String fio);

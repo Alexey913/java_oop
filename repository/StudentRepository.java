@@ -16,8 +16,7 @@ import data.Student;
 public class StudentRepository implements UserRepository<Student, Integer> {
 
     @Override
-    public Student Save(Student entity) {
-
+    public Student save(Student entity) {
         return null;
     }
 

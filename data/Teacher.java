@@ -10,8 +10,8 @@ public class Teacher extends User {
     
     private String scince;
 
-    public Teacher(String fio, int birthYear, long passport, String scince) {
-        super(fio, birthYear, passport);
+    public Teacher(String fio, int birthYear, long passport, String scince, int id) {
+        super(fio, birthYear, passport, id);
         this.scince = scince;
     }
 

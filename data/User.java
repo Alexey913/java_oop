@@ -11,11 +11,13 @@ public abstract class User {
     private String fio;
     private int birthYear;
     private long passport;
-    
-    public User(String fio, int birthYear, long passport) {
+    private int id;
+
+    public User(String fio, int birthYear, long passport, int id) {
         this.fio = fio;
         this.birthYear = birthYear;
         this.passport = passport;
+        this.id = id;
     }
 
     public String getFio() {
@@ -38,5 +40,13 @@ public abstract class User {
     }
     public void setPassport(long passport) {
         this.passport = passport;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

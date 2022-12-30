@@ -69,7 +69,6 @@ public class StudentGroupServiceImpl implements StudentGroupService {
         return studentGroup;
     }
 
-    @Override
     public StudentGroup read (int groupNumber) {
         Teacher teacher = ReaderFromTxt.readTeacher();
         List <Student> listOfStudents = ReaderFromTxt.readStudents();
@@ -78,8 +77,9 @@ public class StudentGroupServiceImpl implements StudentGroupService {
     }
 
     @Override
-    public void create(StudentGroup studentGroup) {
+    public StudentGroup create(StudentGroup studentGroup) {
         // Запись группы в текстовый файл
+        return studentGroup;
     }
 
 // К Семинару 3 - Задача 2
@@ -109,7 +109,7 @@ public class StudentGroupServiceImpl implements StudentGroupService {
 // К Семинару 4 - Задача 2
     @Override
     public StudentGroup saveGroup(StudentGroup studentGroup) {
-        return studentGroupRepository.Save(studentGroup);
+        return studentGroupRepository.save(studentGroup);
     }
 
     @Override

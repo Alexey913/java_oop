@@ -11,6 +11,6 @@
 package repository;
 
 public interface Repository <E, I> {
-    E Save (E entity);
+    E save (E entity);
     E findById (I id);
 }

@@ -20,8 +20,8 @@ public class Student extends User implements Comparable <Student> {
     private int groupNumber;
 
 // К Семинару 2 - Задача 1.1
-    public Student(String fio, int birthYear, long passport, int groupNumber) {
-        super(fio, birthYear, passport);
+    public Student(String fio, int birthYear, long passport, int groupNumber, int id) {
+        super(fio, birthYear, passport, id);
         this.groupNumber = groupNumber;
     }
 
