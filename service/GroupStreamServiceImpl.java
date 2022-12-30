@@ -46,7 +46,7 @@ public class GroupStreamServiceImpl implements GroupStreamService<GroupStream, I
 
     private final Repository <GroupStream, Integer> groupStreamRepository;
 
-    public GroupStreamServiceImpl(Repository groupStreamRepository) {
+    public GroupStreamServiceImpl(Repository <GroupStream, Integer> groupStreamRepository) {
         this.groupStreamRepository = groupStreamRepository;
     }
 
