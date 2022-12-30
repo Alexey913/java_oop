@@ -56,11 +56,6 @@ public class GroupStreamServiceImpl implements GroupStreamService<GroupStream, I
     }
 
     @Override
-    public GroupStream createGroupStream(GroupStream entity) {
-        return entity;
-    }
-
-    @Override
     public GroupStream saveGroupStream(GroupStream entity) {
         return this.groupStreamRepository.save(entity);
     }
