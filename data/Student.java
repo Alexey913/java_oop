@@ -25,6 +25,11 @@ public class Student extends User implements Comparable <Student> {
         this.groupNumber = groupNumber;
     }
 
+// К семинару 5 - Задача 4
+    public Student(String fio) {
+        super(fio);
+    }
+
 // К Д/З Семинар 2
     public int getGroupNumber() {
         return groupNumber;

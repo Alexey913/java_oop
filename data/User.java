@@ -19,7 +19,12 @@ public abstract class User {
         this.passport = passport;
         this.id = id;
     }
+// К Семинару 5- Задача 4
 
+    public User(String fio) {
+        this.fio = fio;
+    }
+//
     public String getFio() {
         return fio;
     }

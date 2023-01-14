@@ -104,4 +104,6 @@ public class StudentServiceImpl implements DataService<Student> {
         return studentRepository.findByFio(fio);
     }
     
+    public void removeUser(Student student) {
+    }
 }
