@@ -8,5 +8,9 @@
 package terminal;
 
 public interface CommandParser {
+    //Для семинара 5
     String[] parseCommand (String inputCommand);
+    
+    //Для семинара 6
+    // Command parseCommand (String inputCommand);
 }

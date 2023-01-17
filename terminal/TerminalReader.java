@@ -12,11 +12,14 @@ package terminal;
 
 import java.util.Scanner;
 
+import service.StudentServiceImpl;
 import terminal.terminalExecute.CommandExecutable;
 
 public class TerminalReader {
     private CommandParser commandParser;
     private static TerminalReader terminalReader;
+    private StudentServiceImpl studentServiceImpl;
+    private CommandExecutableFactory commandExecutableFactory;
 
     private TerminalReader(CommandParser commandParser) {
         this.commandParser = commandParser;
@@ -34,7 +37,7 @@ public class TerminalReader {
         while (true) {
             String command = sc.nextLine();
             String [] parseCommand = commandParser.parseCommand(command);
-            CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();
+            CommandExecutableFactoryImpl commandExecutableFactory = new CommandExecutableFactoryImpl(studentServiceImpl);
             CommandExecutable commandExecutable = commandExecutableFactory.create(parseCommand);
             commandExecutable.execute();
             sc.close();
