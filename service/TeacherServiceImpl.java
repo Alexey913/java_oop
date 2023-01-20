@@ -80,4 +80,20 @@ public class TeacherServiceImpl implements DataService <Teacher> {
         return teacherRepository.findByFio(fio);
     }
     
+    @Override
+    public Teacher findUserByAge(int age) {
+        return teacherRepository.findByAge(age);
+    }
+
+    @Override
+    public void removeUserByFio(String fio) {
+    }
+
+    @Override
+    public void removeUser(Teacher user) {
+    }
+
+    public void removeUserByDiscipline(String discipline) {   
+    }
+    
 }

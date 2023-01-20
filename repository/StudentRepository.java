@@ -30,4 +30,9 @@ public class StudentRepository implements UserRepository<Student, Integer> {
         return null;
     }
 
+    @Override
+    public Student findByAge(Integer age) {
+        return null;
+    }
+
 }

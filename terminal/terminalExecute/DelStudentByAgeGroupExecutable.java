@@ -1,0 +1,24 @@
+package terminal.terminalExecute;
+
+import service.StudentServiceImpl;
+
+public class DelStudentByAgeGroupExecutable implements CommandExecutable{
+    private Integer age;
+    private Integer groupNumber;
+    private StudentServiceImpl studentServiceImpl;
+
+
+
+    public DelStudentByAgeGroupExecutable(Integer age, Integer groupNumber) {
+        this.age = age;
+        this.groupNumber = groupNumber;
+    }
+
+
+    @Override
+    public void execute() {
+        if (studentServiceImpl.findUserByAge(age).getGroupNumber() == groupNumber) {
+            studentServiceImpl.removeUserByGroup(groupNumber);
+        }
+    }
+}

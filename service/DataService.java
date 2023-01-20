@@ -38,4 +38,7 @@ public interface DataService <U extends User> {
     U saveUser(U entity);
     U findUserById(int id);
     U findUserByFio(String fio);
+    U findUserByAge (int age);
+    void removeUserByFio (String fio);
+    void removeUser (U user);
 }

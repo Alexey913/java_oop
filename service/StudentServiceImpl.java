@@ -71,7 +71,7 @@ import repository.StudentRepository;
 import util.ReaderFromTxt;
 import util.WriterToTxt;
 
-public class StudentServiceImpl implements DataService<Student> {
+public class StudentServiceImpl implements DataService <Student> {
 
     private final StudentRepository studentRepository;
     
@@ -103,7 +103,20 @@ public class StudentServiceImpl implements DataService<Student> {
     public Student findUserByFio(String fio) {
         return studentRepository.findByFio(fio);
     }
-    
-    public void removeUser(Student student) {
+
+    @Override
+    public Student findUserByAge(int age) {
+        return studentRepository.findByAge(age);
+    }
+
+    @Override
+    public void removeUserByFio(String fio) {
+    }
+
+    @Override
+    public void removeUser(Student user) {
+    }
+
+    public void removeUserByGroup(int number) {
     }
 }

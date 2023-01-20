@@ -8,19 +8,19 @@ package data;
 
 public class Teacher extends User {
     
-    private String scince;
+    private String discipline;
 
-    public Teacher(String fio, int birthYear, long passport, String scince, int id) {
+    public Teacher(String fio, int birthYear, long passport, String discipline, int id) {
         super(fio, birthYear, passport, id);
-        this.scince = scince;
+        this.discipline = discipline;
     }
 
-    public String getScince() {
-        return scince;
+    public String getdiscipline() {
+        return discipline;
     }
 
-    public void setScince(String scince) {
-        this.scince = scince;
+    public void setdiscipline(String discipline) {
+        this.discipline = discipline;
     }
    
 }

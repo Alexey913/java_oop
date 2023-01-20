@@ -26,5 +26,10 @@ public class TeacherRepository implements UserRepository <Teacher, Integer> {
     public Teacher findByFio(String fio) {
         return null;
     }
+
+    @Override
+    public Teacher findByAge(Integer age) {
+        return null;
+    }
     
 }

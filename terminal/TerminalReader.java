@@ -7,6 +7,12 @@
 // Семинар 5. Задача 2
 // - Сделать класс TerminalReader синглтоном
 
+// Семинар 5. Задача 4.
+// - Создать класc CommandExecutableFactory 
+// - Реализовать в нём метод CommandExecutable create (String[] input),
+// где в зависимости от переданных параметров создается тот или иной класс 
+// - Осуществить этот класс и метод в классе TerminalReader
+
 
 package terminal;
 
@@ -35,7 +41,7 @@ public class TerminalReader {
             String command = sc.nextLine();
             String [] parseCommand = commandParser.parseCommand(command);
             CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();
-            CommandExecutable commandExecutable = commandExecutableFactory.create(parseCommand);
+            CommandExecutable commandExecutable = commandExecutableFactory.commandForAction(parseCommand);
             commandExecutable.execute();
             sc.close();
         }

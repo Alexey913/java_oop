@@ -10,4 +10,5 @@ package terminal.terminalExecute;
 
 public interface CommandExecutable {
     public void execute();
+
 }
