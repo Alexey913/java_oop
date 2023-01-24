@@ -12,11 +12,11 @@ package terminal.terminalExecute;
 import service.StudentServiceImpl;
 
 public class DelStudentByFioExecutable implements CommandExecutable{
-    private String fio;
     private StudentServiceImpl studentServiceImpl;
+    private String fio;
 
-
-    public DelStudentByFioExecutable(String fio) {
+    public DelStudentByFioExecutable(StudentServiceImpl studentServiceImpl, String fio) {
+        this.studentServiceImpl = studentServiceImpl;
         this.fio = fio;
     }
 

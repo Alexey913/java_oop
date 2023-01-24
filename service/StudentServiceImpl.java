@@ -71,7 +71,7 @@ import repository.StudentRepository;
 import util.ReaderFromTxt;
 import util.WriterToTxt;
 
-public class StudentServiceImpl implements DataService <Student> {
+public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository studentRepository;
     
@@ -117,6 +117,7 @@ public class StudentServiceImpl implements DataService <Student> {
     public void removeUser(Student user) {
     }
 
+    @Override
     public void removeUserByGroup(int number) {
     }
 }

@@ -26,19 +26,27 @@ package terminal;
 
 import java.util.Scanner;
 
+import service.StudentServiceImpl;
+import terminal.factories.CommandExecutableFactory;
 import terminal.terminalExecute.CommandExecutable;
 
 public class TerminalReader {
-    private CommandParser commandParser;
+    
+    private final CommandParser commandParser;
+    private final CommandExecutableFactory commandExecutableFactory;
+    
     private static TerminalReader terminalReader;
 
-    private TerminalReader(CommandParser commandParser) {
+    private TerminalReader(StudentServiceImpl studentServiceImpl, CommandParser commandParser,
+            CommandExecutableFactory commandExecutableFactory) {
         this.commandParser = commandParser;
+        this.commandExecutableFactory = commandExecutableFactory;
     }
 
-    public static TerminalReader getInstance(CommandParser commandParser) {
+    public static TerminalReader getInstance(StudentServiceImpl studentServiceImpl, CommandParser commandParser,
+    CommandExecutableFactory commandExecutableFactory) {
         if (terminalReader == null) {
-            terminalReader = new TerminalReader(commandParser);
+            terminalReader = new TerminalReader(studentServiceImpl, commandParser, commandExecutableFactory);
         }
         return terminalReader;
     }
@@ -47,11 +55,9 @@ public class TerminalReader {
         Scanner sc = new Scanner(System.in);
         while (true) {
             String command = sc.nextLine();
-            String [] parseCommand = commandParser.parseCommand(command);
-            CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();
+            Command parseCommand = commandParser.parseCommand(command);
             CommandExecutable commandExecutable = commandExecutableFactory.commandForAction(parseCommand);
             commandExecutable.execute();
-            sc.close();
         }
     }
 }

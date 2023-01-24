@@ -34,5 +34,4 @@ public class StudentRepository implements UserRepository<Student, Integer> {
     public Student findByAge(Integer age) {
         return null;
     }
-
 }

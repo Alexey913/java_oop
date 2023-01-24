@@ -46,7 +46,7 @@ import repository.TeacherRepository;
 import util.ReaderFromTxt;
 import util.WriterToTxt;
 
-public class TeacherServiceImpl implements DataService <Teacher> {
+public class TeacherServiceImpl implements TeacherService {
 
     private final TeacherRepository teacherRepository;
     
@@ -93,6 +93,7 @@ public class TeacherServiceImpl implements DataService <Teacher> {
     public void removeUser(Teacher user) {
     }
 
+    @Override
     public void removeUserByDiscipline(String discipline) {   
     }
     
