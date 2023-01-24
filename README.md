@@ -147,3 +147,46 @@ E findById (I id)
 * удалить студента по имени
 * удалить студента по номеру группы и возрасту
 3. *Продумать логику отображения результата выполнения команды _(не реализовано)_
+
+## Семинар 6
+
+**Задание 1**
+* Создать класс Command, который бы инкапсулировал в себе содержимое введенной команды
+* Реализовать в нем булевские методы для проверки введенных команд
+* Изменить сигнатуру у интерфейса ParseCommand, чтобы он вместо массива строк начал возвращать  объект класса Command
+*  отредактировать класс CommandExecutableFactory, убрав из него хардкод и начав принимать на вход объект Command
+
+**Задание 2**
+* Создать класс LogingCommandExecutableFactory, наследующий класс CommandExecutableFactory
+* Переопределить единственный метод так, чтобы он вызывал внутри себя метод предка, но в начале и конце распечатывал информацию о входных и выходных параметрах.
+
+**Задание 3**
+* Переименовать класс CommandExecutableFactory в CommandExecutableFactoryImpl
+* Создать интерфейс CommandExecutableFactory и имплементировать от него класс CommandExecutableFactoryImpl
+* В классе TerminalReader реализовать DIP, то есть возможность менять реализации CommandExecutableFactory
+
+## Домашнее задание (семинар 6)
+1. Повторить семинар задания с семинара 6
+2. Проверить и отредактировать весь проект на предмет соответствия SOLID
+3. Вместе с ссылкой указать, что вы поменяли и исходя из какого принципа
+4. ** Продумать логику отображения результата выполнения команды
+
+## Выполнение ДЗ семинара 6
+
+1. **Пэкэдж controller**
+* Переименовал классы GroupController и GroupStreamController в GroupControllerImpl и GroupStreamControllerImpl, соответственно.
+* Реализовал два интерфейса GroupController и GroupStreamController, сделав абстрактными все методы, которые были реализованы без абстракций, в соответствии с Dependency Inversion Principle (Принцип инверсии зависимостей)
+* Добавил метод create в интерфейс UserController, в соответствии с Принципом инверсии зависимостей (DIP)
+* UserController – удалил public abstract, т.к. в интерфейсе методы по умолчанию public abstract
+
+
+2. **Пэкэдж repository**
+* StudentGroup - исправил в переопределении StudentGroup определение teacher и listOfStudent одной строкой
+
+3. **Пэкэдж service**
+* Для соблюдения принципа Dependency Inversion Principle (Принцип инверсии зависимостей) создал расширенные интерфейсы StudentService и TeacherService от DataService, т.к. данные классы имеют уникальные методы
+* Не включил эти методы в существующий интерфейс DataService во избежание нарушения принципа Interface Segregation Principle (Принцип разделения интерфейса).
+
+4. **Пэкэдж terminal**
+* В CommandExecutableFactory, DelStudentByFioExecutable, DelStudentByAgeGroupExecutable добавил зависимости переменных через конструкторы в соответствии с принципом Dependency Inversion Principle (Принцип инверсии зависимостей).
+* Корректировку на соответствие Single Responsibility Principle (Принцип единственной ответственности) произвел в рамках работы семинара 6, убрав хардкод из CommandExecutableFactory.
