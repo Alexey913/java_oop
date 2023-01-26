@@ -26,7 +26,6 @@ package terminal;
 
 import java.util.Scanner;
 
-import service.StudentServiceImpl;
 import terminal.factories.CommandExecutableFactory;
 import terminal.terminalExecute.CommandExecutable;
 
@@ -37,16 +36,16 @@ public class TerminalReader {
     
     private static TerminalReader terminalReader;
 
-    private TerminalReader(StudentServiceImpl studentServiceImpl, CommandParser commandParser,
+    private TerminalReader(CommandParser commandParser,
             CommandExecutableFactory commandExecutableFactory) {
         this.commandParser = commandParser;
         this.commandExecutableFactory = commandExecutableFactory;
     }
 
-    public static TerminalReader getInstance(StudentServiceImpl studentServiceImpl, CommandParser commandParser,
+    public static TerminalReader getInstance(CommandParser commandParser,
     CommandExecutableFactory commandExecutableFactory) {
         if (terminalReader == null) {
-            terminalReader = new TerminalReader(studentServiceImpl, commandParser, commandExecutableFactory);
+            terminalReader = new TerminalReader(commandParser, commandExecutableFactory);
         }
         return terminalReader;
     }

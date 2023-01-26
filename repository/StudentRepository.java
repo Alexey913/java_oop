@@ -12,12 +12,20 @@
 package repository;
 
 import data.Student;
+import db.StudentTable;
 
 public class StudentRepository implements UserRepository<Student, Integer> {
 
+    private final StudentTable studentTable;
+    
+    public StudentRepository(StudentTable studentTable) {
+        this.studentTable = studentTable;
+    }
+
     @Override
     public Student save(Student entity) {
-        return null;
+        this.studentTable.save(entity);
+        return entity;
     }
 
     @Override
@@ -33,5 +41,15 @@ public class StudentRepository implements UserRepository<Student, Integer> {
     @Override
     public Student findByAge(Integer age) {
         return null;
+    }
+
+    @Override
+    public void removeUserByFio(Student entity) {
+        this.studentTable.removeUserByFio(entity.getFio());
+    }
+
+    @Override
+    public void removeUser(Student user) {
+        
     }
 }

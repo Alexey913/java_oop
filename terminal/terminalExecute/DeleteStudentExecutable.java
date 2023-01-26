@@ -16,20 +16,20 @@
 package terminal.terminalExecute;
 
 import data.Student;
-import service.StudentServiceImpl;
+import service.StudentService;
 
 public class DeleteStudentExecutable implements CommandExecutable {
 
-    private StudentServiceImpl studentServiceImpl;
+    private StudentService studentService;
     private Student student;
     
-    public DeleteStudentExecutable(StudentServiceImpl studentServiceImpl, Student student) {
-        this.studentServiceImpl = studentServiceImpl;
+    public DeleteStudentExecutable(StudentService studentService, Student student) {
+        this.studentService = studentService;
         this.student = student;
     }
 
     @Override
     public void execute() {
-        studentServiceImpl.removeUser(student);
+        studentService.removeUser(student);
     }
 }

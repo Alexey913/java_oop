@@ -31,5 +31,18 @@ public class TeacherRepository implements UserRepository <Teacher, Integer> {
     public Teacher findByAge(Integer age) {
         return null;
     }
+
+    @Override
+    public void removeUserByFio(Teacher entity) {
+
+        
+    }
+
+    @Override
+    public void removeUser(Teacher entity) {
+
+        
+    }
+
     
 }

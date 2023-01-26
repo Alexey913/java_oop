@@ -18,7 +18,6 @@
 
 package data;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -28,9 +27,9 @@ import data.iterator.StudentGroupIterator;
 public class StudentGroup implements Iterable <Student> {
     
 // К Д/З Семинар 2
-    Teacher teacher;
-    List <Student> listOfStudents = new ArrayList<>();
-    int groupNumber;
+    private Teacher teacher;
+    private List <Student> listOfStudents;
+    private int groupNumber;
 
     public StudentGroup(Teacher teacher, List<Student> listOfStudents) {
         this.teacher = teacher;

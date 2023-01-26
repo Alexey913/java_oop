@@ -17,7 +17,7 @@
 package terminal.factories;
 
 import data.Student;
-import service.StudentServiceImpl;
+import service.StudentService;
 import terminal.Command;
 import terminal.terminalExecute.CommandExecutable;
 import terminal.terminalExecute.CreateStudentExecutable;
@@ -26,21 +26,21 @@ import terminal.terminalExecute.DelStudentByFioExecutable;
 import terminal.terminalExecute.DeleteStudentExecutable;
 
 public class CommandExecutableFactoryImpl implements CommandExecutableFactory {
-    private StudentServiceImpl studentServiceImpl;
+    private StudentService studentService;
 
-    public CommandExecutableFactoryImpl(StudentServiceImpl studentServiceImpl) {
-        this.studentServiceImpl = studentServiceImpl;
+    public CommandExecutableFactoryImpl(StudentService studentService) {
+        this.studentService = studentService;
     }
 
 // К семинару 5
 //     public CommandExecutable commandForAction (String [] input) {
 //         if (input[0].equals("add"))
-//             return new CreateStudentExecutable (studentServiceImpl, new Student(input[1]));
+//             return new CreateStudentExecutable (studentService, new Student(input[1]));
 //         else if (input[0].equals("delete") && input[1].equals("name"))
-//             return new DelStudentByFioExecutable(input[2], studentServiceImpl);
+//             return new DelStudentByFioExecutable(input[2], studentService);
 //         else if (input[0].equals("delete") && input[1].equals("Age-Group"))
-//             return new DelStudentByAgeGroupExecutable(Integer.parseInt(input[2]), Integer.parseInt(input[3]), studentServiceImpl);
-//         else return new DeleteStudentExecutable (studentServiceImpl, new Student (input[1]));
+//             return new DelStudentByAgeGroupExecutable(Integer.parseInt(input[2]), Integer.parseInt(input[3]), studentService);
+//         else return new DeleteStudentExecutable (studentService, new Student (input[1]));
 //     }
 // }
 
@@ -49,13 +49,13 @@ public class CommandExecutableFactoryImpl implements CommandExecutableFactory {
     @Override
     public CommandExecutable commandForAction (Command input) {
         if (input.isCreateCommand())
-            return new CreateStudentExecutable (studentServiceImpl, new Student(input.getFirstArgument()));
+            return new CreateStudentExecutable (studentService, new Student(input.getFirstArgument()));
         else if (input.isDelByNameCommand()) {
-            return new DelStudentByFioExecutable(studentServiceImpl, input.getSecondArgument());
+            return new DelStudentByFioExecutable(studentService, input.getSecondArgument());
         }
         else if (input.isDelByAgeGroupCommand()) {
-            return new DelStudentByAgeGroupExecutable(studentServiceImpl, input.getThirdArgument(), input.getFourthArgument());
+            return new DelStudentByAgeGroupExecutable(studentService, input.getThirdArgument(), input.getFourthArgument());
         }
-        else return new DeleteStudentExecutable (studentServiceImpl, new Student (input.getFirstArgument()));
+        else return new DeleteStudentExecutable (studentService, new Student (input.getFirstArgument()));
     }
 }

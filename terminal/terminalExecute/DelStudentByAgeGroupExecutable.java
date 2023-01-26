@@ -8,16 +8,16 @@
 
 package terminal.terminalExecute;
 
-import service.StudentServiceImpl;
+import service.StudentService;
 
 public class DelStudentByAgeGroupExecutable implements CommandExecutable{
-    private StudentServiceImpl studentServiceImpl;
+    private StudentService studentService;
     private Integer age;
     private Integer groupNumber;
 
 
-    public DelStudentByAgeGroupExecutable(StudentServiceImpl studentServiceImpl, Integer age, Integer groupNumber) {
-        this.studentServiceImpl = studentServiceImpl;
+    public DelStudentByAgeGroupExecutable(StudentService studentService, Integer age, Integer groupNumber) {
+        this.studentService = studentService;
         this.age = age;
         this.groupNumber = groupNumber;
     }
@@ -25,8 +25,8 @@ public class DelStudentByAgeGroupExecutable implements CommandExecutable{
 
     @Override
     public void execute() {
-        if (studentServiceImpl.findUserByAge(age).getGroupNumber() == groupNumber) {
-            studentServiceImpl.removeUserByGroup(groupNumber);
+        if (studentService.findUserByAge(age).getGroupNumber() == groupNumber) {
+            studentService.removeUserByGroup(groupNumber);
         }
     }
 }

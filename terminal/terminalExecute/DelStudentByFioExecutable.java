@@ -9,19 +9,19 @@
 
 package terminal.terminalExecute;
 
-import service.StudentServiceImpl;
+import service.StudentService;
 
 public class DelStudentByFioExecutable implements CommandExecutable{
-    private StudentServiceImpl studentServiceImpl;
+    private StudentService studentService;
     private String fio;
 
-    public DelStudentByFioExecutable(StudentServiceImpl studentServiceImpl, String fio) {
-        this.studentServiceImpl = studentServiceImpl;
+    public DelStudentByFioExecutable(StudentService studentService, String fio) {
+        this.studentService = studentService;
         this.fio = fio;
     }
 
     @Override
     public void execute() {
-        this.studentServiceImpl.removeUserByFio(fio);
+        this.studentService.removeUserByFio(fio);
     }
 }
