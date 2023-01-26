@@ -18,6 +18,9 @@ public class StudentTable extends Table <Student> {
                 return true;
             }
         }
+        for (Student student: elements) {
+            System.out.println(student);
+        }
         return false;
     }
 }

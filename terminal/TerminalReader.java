@@ -33,19 +33,21 @@ public class TerminalReader {
     
     private final CommandParser commandParser;
     private final CommandExecutableFactory commandExecutableFactory;
+    private final ResultView resultView;
     
     private static TerminalReader terminalReader;
 
     private TerminalReader(CommandParser commandParser,
-            CommandExecutableFactory commandExecutableFactory) {
+            CommandExecutableFactory commandExecutableFactory, ResultView resultView) {
         this.commandParser = commandParser;
         this.commandExecutableFactory = commandExecutableFactory;
+        this.resultView = resultView;
     }
 
     public static TerminalReader getInstance(CommandParser commandParser,
-    CommandExecutableFactory commandExecutableFactory) {
+    CommandExecutableFactory commandExecutableFactory, ResultView resultView) {
         if (terminalReader == null) {
-            terminalReader = new TerminalReader(commandParser, commandExecutableFactory);
+            terminalReader = new TerminalReader(commandParser, commandExecutableFactory, resultView);
         }
         return terminalReader;
     }
@@ -56,7 +58,8 @@ public class TerminalReader {
             String command = sc.nextLine();
             Command parseCommand = commandParser.parseCommand(command);
             CommandExecutable commandExecutable = commandExecutableFactory.commandForAction(parseCommand);
-            commandExecutable.execute();
+            CommandResult result = commandExecutable.execute();
+            resultView.processCommandResult(result);
         }
     }
 }

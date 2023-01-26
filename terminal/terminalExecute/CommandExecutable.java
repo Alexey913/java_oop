@@ -8,7 +8,9 @@
 
 package terminal.terminalExecute;
 
+import terminal.CommandResult;
+
 public interface CommandExecutable {
-    public void execute();
+    CommandResult execute();
 
 }

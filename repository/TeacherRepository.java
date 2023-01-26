@@ -33,9 +33,8 @@ public class TeacherRepository implements UserRepository <Teacher, Integer> {
     }
 
     @Override
-    public void removeUserByFio(Teacher entity) {
-
-        
+    public boolean removeUserByFio(String fio) {
+        return true;
     }
 
     @Override

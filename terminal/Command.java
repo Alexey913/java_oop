@@ -12,10 +12,10 @@ import java.util.List;
 
 public class Command {
 
-    private static final String ADD = "add";
-    private static final String DEL = "delete";
-    private static final String NAME = "name";
-    private static final String AGEGROUP = "age/group";
+    public static final String ADD = "add";
+    public static final String DEL = "delete";
+    private static final String NAME = "-name";
+    private static final String AGEGROUP = "-age-group";
     private String action;
     private List <String> args;
 

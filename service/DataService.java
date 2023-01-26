@@ -39,6 +39,6 @@ public interface DataService <U extends User> {
     U findUserById(int id);
     U findUserByFio(String fio);
     U findUserByAge (int age);
-    void removeUserByFio (String fio);
+    boolean removeUserByFio (String fio);
     void removeUser (U user);
 }

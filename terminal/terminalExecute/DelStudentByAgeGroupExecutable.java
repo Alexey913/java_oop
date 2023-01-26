@@ -9,8 +9,10 @@
 package terminal.terminalExecute;
 
 import service.StudentService;
+import terminal.CommandResult;
 
-public class DelStudentByAgeGroupExecutable implements CommandExecutable{
+public class DelStudentByAgeGroupExecutable extends AbstractCommandExecutable {
+    private static final String DESCRIPTION = "Команда УДАЛЕНИЕ СТУДЕНТА ПО ВОЗРАСТУ И ИМЕНИ ГРУППЫ ";
     private StudentService studentService;
     private Integer age;
     private Integer groupNumber;
@@ -24,9 +26,18 @@ public class DelStudentByAgeGroupExecutable implements CommandExecutable{
 
 
     @Override
-    public void execute() {
+    public CommandResult execute() {
         if (studentService.findUserByAge(age).getGroupNumber() == groupNumber) {
             studentService.removeUserByGroup(groupNumber);
+            return createResult(true);
         }
+        else return createResult(false);
+    }
+
+    @Override
+    protected String getDescription() {
+        return DESCRIPTION +
+                "[возраст " + age + ", " +
+                "группа " + groupNumber + "] ";
     }
 }

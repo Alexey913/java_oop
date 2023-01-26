@@ -10,8 +10,11 @@
 package terminal.terminalExecute;
 
 import service.StudentService;
+import terminal.CommandResult;
 
-public class DelStudentByFioExecutable implements CommandExecutable{
+public class DelStudentByFioExecutable extends AbstractCommandExecutable {
+    private static final String DESCRIPTION = "Команда УДАЛЕНИЕ СТУДЕНТА ПО ФИО ";
+
     private StudentService studentService;
     private String fio;
 
@@ -21,7 +24,14 @@ public class DelStudentByFioExecutable implements CommandExecutable{
     }
 
     @Override
-    public void execute() {
-        this.studentService.removeUserByFio(fio);
+    public CommandResult execute() {
+        boolean check = this.studentService.removeUserByFio(fio);
+        return createResult(check);
+    }
+
+    @Override
+    protected String getDescription() {
+        return DESCRIPTION +
+                "[Студент " + fio +"] ";
     }
 }

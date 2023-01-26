@@ -9,8 +9,10 @@ package terminal.terminalExecute;
 
 import data.Student;
 import service.StudentService;
+import terminal.CommandResult;
 
-public class CreateStudentExecutable implements CommandExecutable {
+public class CreateStudentExecutable extends AbstractCommandExecutable{
+    private static final String DESCRIPTION = "Команда СОЗДАНИЕ СТУДЕНТА ";
 
     private StudentService studentService;
     private Student student;
@@ -21,7 +23,13 @@ public class CreateStudentExecutable implements CommandExecutable {
     }
 
     @Override
-    public void execute() {
+    public CommandResult execute() {
         studentService.saveUser(student);
+        return createResult(true);
+    }
+
+    @Override
+    protected String getDescription() {
+        return DESCRIPTION + student.toString() + " ";
     }
 }

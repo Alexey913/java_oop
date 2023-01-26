@@ -86,7 +86,8 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public void removeUserByFio(String fio) {
+    public boolean removeUserByFio(String fio) {
+        return true;
     }
 
     @Override

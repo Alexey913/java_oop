@@ -18,8 +18,8 @@ public class StudentRepository implements UserRepository<Student, Integer> {
 
     private final StudentTable studentTable;
     
-    public StudentRepository(StudentTable studentTable) {
-        this.studentTable = studentTable;
+    public StudentRepository() {
+        this.studentTable = new StudentTable();
     }
 
     @Override
@@ -44,8 +44,8 @@ public class StudentRepository implements UserRepository<Student, Integer> {
     }
 
     @Override
-    public void removeUserByFio(Student entity) {
-        this.studentTable.removeUserByFio(entity.getFio());
+    public boolean removeUserByFio(String fio) {
+        return this.studentTable.removeUserByFio(fio);
     }
 
     @Override

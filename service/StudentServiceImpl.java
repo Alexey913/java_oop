@@ -110,7 +110,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void removeUserByFio(String fio) {
+    public boolean removeUserByFio(String fio) {
+        return studentRepository.removeUserByFio(fio);
     }
 
     @Override

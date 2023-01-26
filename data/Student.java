@@ -46,5 +46,10 @@ public class Student extends User implements Comparable <Student> {
         if (this.getBirthYear() < student.getBirthYear()) return -1;
         return 0;
     }
-    
+    @Override
+    public String toString() {
+        return "Студент [" +
+        (getFio() != null ? getFio() + " " : "") +
+        ']';
+    }
 }

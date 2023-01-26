@@ -15,21 +15,18 @@
 
 package terminal.terminalExecute;
 
-import data.Student;
-import service.StudentService;
+import terminal.CommandResult;
 
-public class DeleteStudentExecutable implements CommandExecutable {
+public class ErrorCommand extends AbstractCommandExecutable {
+    private static final String DESCRIPTION = "НЕВЕРНАЯ КОМАНДА!";
 
-    private StudentService studentService;
-    private Student student;
-    
-    public DeleteStudentExecutable(StudentService studentService, Student student) {
-        this.studentService = studentService;
-        this.student = student;
+    @Override
+    public CommandResult execute() {
+        return new CommandResult(getDescription());
     }
 
     @Override
-    public void execute() {
-        studentService.removeUser(student);
+    protected String getDescription() {
+        return DESCRIPTION;
     }
 }
