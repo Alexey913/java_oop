@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         StudentRepository repository = new StudentRepository();
-        
+
         StudentService service = new StudentServiceImpl(repository);
         CommandExecutableFactory factory = new CommandExecutableFactoryImpl(service);
         CommandParser parser = new CommandParserImpl();

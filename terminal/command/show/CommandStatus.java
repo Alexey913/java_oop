@@ -15,9 +15,9 @@ public class CommandStatus {
 
     @Override
     public String toString() {
-        if (isDone == null) return comment;
-        return comment +
-                (isDone ? "выполнена" : "не выполнена");
+        if (isDone == null) {
+            return comment;
+        }
+        return comment + (isDone ? "выполнена" : "не выполнена");
     }
-
 }

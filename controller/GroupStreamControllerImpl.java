@@ -5,10 +5,10 @@ import java.util.List;
 import data.GroupStream;
 import service.GroupStreamServiceImpl;
 
-public class GroupStreamControllerImpl implements GroupStreamController <GroupStream, Integer> {
+public class GroupStreamControllerImpl implements GroupStreamController<GroupStream, Integer> {
 
     private final GroupStreamServiceImpl groupStreamServiceImpl;
-    
+
     public GroupStreamControllerImpl(GroupStreamServiceImpl groupStreamServiceImpl) {
         this.groupStreamServiceImpl = groupStreamServiceImpl;
     }
@@ -24,7 +24,7 @@ public class GroupStreamControllerImpl implements GroupStreamController <GroupSt
     }
 
     @Override
-    public List <GroupStream> sortGroupStream (List <GroupStream> entityStream) {
+    public List<GroupStream> sortGroupStream(List<GroupStream> entityStream) {
         this.groupStreamServiceImpl.sortGroupStream(entityStream);
         return entityStream;
     }

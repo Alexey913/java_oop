@@ -1,8 +1,3 @@
-// Задание 2
-// - Создать класс LogingCommandExecutableFactory, наследующий класс CommandExecutableFactory
-// - Переопределить единственный метод так, чтобы он вызывал внутри себя метод
-// предка, но в начале и конце распечатывал информацию о входных и выходных параметрах
-
 package terminal.factories;
 
 import service.StudentServiceImpl;
@@ -10,7 +5,7 @@ import terminal.command.Command;
 import terminal.terminalExecute.CommandExecutable;
 
 public class LogingCommandExecutableFactory extends CommandExecutableFactoryImpl {
-   
+
     public LogingCommandExecutableFactory(StudentServiceImpl studentServiceImpl) {
         super(studentServiceImpl);
     }
