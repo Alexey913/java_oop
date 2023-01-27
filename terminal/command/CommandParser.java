@@ -12,7 +12,7 @@
 // - отредактировать класс CommandExecutableFactory, убрав из него хардкод и начав принимать на вход
 // объект Command
 
-package terminal;
+package terminal.command;
 
 //Для семинара 5
 // public interface CommandParser {

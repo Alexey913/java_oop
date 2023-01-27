@@ -8,9 +8,9 @@
 
 package terminal.terminalExecute;
 
-import terminal.CommandResult;
+import terminal.command.show.CommandStatus;
 
 public interface CommandExecutable {
-    CommandResult execute();
+    CommandStatus execute();
 
 }

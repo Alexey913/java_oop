@@ -15,18 +15,18 @@
 
 package terminal.terminalExecute;
 
-import terminal.CommandResult;
+import terminal.command.show.CommandStatus;
 
-public class ErrorCommand extends AbstractCommandExecutable {
-    private static final String DESCRIPTION = "НЕВЕРНАЯ КОМАНДА!";
+public class WrongCommand extends AbstractExecutable {
+    private static final String COMMENT = "НЕВЕРНАЯ КОМАНДА!";
 
     @Override
-    public CommandResult execute() {
-        return new CommandResult(getDescription());
+    public CommandStatus execute() {
+        return new CommandStatus(getComment());
     }
 
     @Override
-    protected String getDescription() {
-        return DESCRIPTION;
+    protected String getComment() {
+        return COMMENT;
     }
 }

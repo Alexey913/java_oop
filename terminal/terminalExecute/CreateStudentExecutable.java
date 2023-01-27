@@ -9,10 +9,10 @@ package terminal.terminalExecute;
 
 import data.Student;
 import service.StudentService;
-import terminal.CommandResult;
+import terminal.command.show.CommandStatus;
 
-public class CreateStudentExecutable extends AbstractCommandExecutable{
-    private static final String DESCRIPTION = "Команда СОЗДАНИЕ СТУДЕНТА ";
+public class CreateStudentExecutable extends AbstractExecutable{
+    private static final String COMMENT = "Команда СОЗДАНИЕ СТУДЕНТА ";
 
     private StudentService studentService;
     private Student student;
@@ -23,13 +23,13 @@ public class CreateStudentExecutable extends AbstractCommandExecutable{
     }
 
     @Override
-    public CommandResult execute() {
+    public CommandStatus execute() {
         studentService.saveUser(student);
         return createResult(true);
     }
 
     @Override
-    protected String getDescription() {
-        return DESCRIPTION + student.toString() + " ";
+    protected String getComment() {
+        return COMMENT + student.toString() + " ";
     }
 }

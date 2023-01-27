@@ -9,10 +9,10 @@
 package terminal.terminalExecute;
 
 import service.StudentService;
-import terminal.CommandResult;
+import terminal.command.show.CommandStatus;
 
-public class DelStudentByAgeGroupExecutable extends AbstractCommandExecutable {
-    private static final String DESCRIPTION = "Команда УДАЛЕНИЕ СТУДЕНТА ПО ВОЗРАСТУ И ИМЕНИ ГРУППЫ ";
+public class DelStudentByAgeGroupExecutable extends AbstractExecutable {
+    private static final String COMMENT = "Команда УДАЛЕНИЕ СТУДЕНТА ПО ВОЗРАСТУ И ИМЕНИ ГРУППЫ ";
     private StudentService studentService;
     private Integer age;
     private Integer groupNumber;
@@ -26,7 +26,7 @@ public class DelStudentByAgeGroupExecutable extends AbstractCommandExecutable {
 
 
     @Override
-    public CommandResult execute() {
+    public CommandStatus execute() {
         if (studentService.findUserByAge(age).getGroupNumber() == groupNumber) {
             studentService.removeUserByGroup(groupNumber);
             return createResult(true);
@@ -35,8 +35,8 @@ public class DelStudentByAgeGroupExecutable extends AbstractCommandExecutable {
     }
 
     @Override
-    protected String getDescription() {
-        return DESCRIPTION +
+    protected String getComment() {
+        return COMMENT +
                 "[возраст " + age + ", " +
                 "группа " + groupNumber + "] ";
     }

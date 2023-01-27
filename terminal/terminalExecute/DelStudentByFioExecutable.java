@@ -10,10 +10,10 @@
 package terminal.terminalExecute;
 
 import service.StudentService;
-import terminal.CommandResult;
+import terminal.command.show.CommandStatus;
 
-public class DelStudentByFioExecutable extends AbstractCommandExecutable {
-    private static final String DESCRIPTION = "Команда УДАЛЕНИЕ СТУДЕНТА ПО ФИО ";
+public class DelStudentByFioExecutable extends AbstractExecutable {
+    private static final String COMMENT = "Команда УДАЛЕНИЕ СТУДЕНТА ПО ФИО ";
 
     private StudentService studentService;
     private String fio;
@@ -24,14 +24,14 @@ public class DelStudentByFioExecutable extends AbstractCommandExecutable {
     }
 
     @Override
-    public CommandResult execute() {
+    public CommandStatus execute() {
         boolean check = this.studentService.removeUserByFio(fio);
         return createResult(check);
     }
 
     @Override
-    protected String getDescription() {
-        return DESCRIPTION +
+    protected String getComment() {
+        return COMMENT +
                 "[Студент " + fio +"] ";
     }
 }

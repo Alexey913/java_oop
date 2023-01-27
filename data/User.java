@@ -24,6 +24,11 @@ public abstract class User {
     public User(String fio) {
         this.fio = fio;
     }
+
+    public User(String fio, int birthYear) {
+        this.fio = fio;
+        this.birthYear = birthYear;
+    }
 //
     public String getFio() {
         return fio;

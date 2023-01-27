@@ -6,7 +6,7 @@
 package terminal.factories;
 
 import service.StudentServiceImpl;
-import terminal.Command;
+import terminal.command.Command;
 import terminal.terminalExecute.CommandExecutable;
 
 public class LogingCommandExecutableFactory extends CommandExecutableFactoryImpl {

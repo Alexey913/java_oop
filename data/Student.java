@@ -30,6 +30,11 @@ public class Student extends User implements Comparable <Student> {
         super(fio);
     }
 
+    public Student(String fio, int birthYear, int groupNumber) {
+        super(fio, birthYear);
+        this.groupNumber = groupNumber;
+    }
+
 // К Д/З Семинар 2
     public int getGroupNumber() {
         return groupNumber;
@@ -48,8 +53,10 @@ public class Student extends User implements Comparable <Student> {
     }
     @Override
     public String toString() {
-        return "Студент [" +
-        (getFio() != null ? getFio() + " " : "") +
+        return "[Студент " +
+        (getFio() != null ? getFio() : "") +
+        (getBirthYear() != 0 ? " Год рождения: " + getBirthYear() : "") + 
+        (getGroupNumber() != 0 ? " Группа: " + getGroupNumber() : "") + 
         ']';
     }
 }

@@ -5,8 +5,8 @@
 
 package terminal.factories;
 
+import terminal.command.Command;
 import terminal.terminalExecute.CommandExecutable;
-import terminal.Command;
 
 public interface CommandExecutableFactory {
     public CommandExecutable commandForAction (Command input);

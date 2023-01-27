@@ -1,11 +1,12 @@
 import repository.StudentRepository;
 import service.StudentService;
 import service.StudentServiceImpl;
-import terminal.CommandParser;
-import terminal.CommandParserImpl;
-import terminal.ResultView;
-import terminal.ResultViewImpl;
+import terminal.StartMenu;
 import terminal.TerminalReader;
+import terminal.command.CommandParser;
+import terminal.command.CommandParserImpl;
+import terminal.command.show.ShowResult;
+import terminal.command.show.ShowResultImpl;
 import terminal.factories.CommandExecutableFactory;
 import terminal.factories.CommandExecutableFactoryImpl;
 
@@ -17,9 +18,9 @@ public class Main {
         StudentService service = new StudentServiceImpl(repository);
         CommandExecutableFactory factory = new CommandExecutableFactoryImpl(service);
         CommandParser parser = new CommandParserImpl();
-        ResultView view = new ResultViewImpl();
+        ShowResult showResult = new ShowResultImpl();
 
-        Menu.terminal();
-        TerminalReader.getInstance(parser, factory, view).scanner();
+        StartMenu.terminal();
+        TerminalReader.getInstance(parser, factory, showResult).scanner();
     }
 }

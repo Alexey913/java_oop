@@ -6,7 +6,7 @@
 // - отредактировать класс CommandExecutableFactory, убрав из него хардкод и начав принимать на вход
 // объект Command
 
-package terminal;
+package terminal.command;
 
 import java.util.List;
 
@@ -14,8 +14,9 @@ public class Command {
 
     public static final String ADD = "add";
     public static final String DEL = "delete";
-    private static final String NAME = "-name";
-    private static final String AGEGROUP = "-age-group";
+    public static final String NAME = "-name";
+    public static final String AGEGROUP = "-ag";
+    public static final String NAMEAGEGROUP = "-nag";
     private String action;
     private List <String> args;
 
@@ -28,8 +29,12 @@ public class Command {
         return args.get(0);
     }
 
-    public String getSecondArgument() {
+    public String getSecondArgumentStr() {
         return args.get(1);
+    }
+
+    public Integer getSecondArgumentInt() {
+        return Integer.parseInt(args.get(1));
     }
 
     public Integer getThirdArgument() {
@@ -40,20 +45,31 @@ public class Command {
         return Integer.parseInt(args.get(3));
     }
 
-    public boolean isCreateCommand () {
-        return this.action.equals(ADD);
-    } 
+    public boolean isCreateCommandByName () {
+        if (args.size() == 2) {
+            return (this.action.equals(ADD) && getFirstArgument().equals(NAME));
+        }
+        return false;
+    }
 
-    public boolean isDeleteCommand () {
-        return this.action.equals(DEL);
+    public boolean isCreateCommandByNameAgeGroup () {
+        if (args.size()==4) {
+            return (this.action.equals(ADD) && getFirstArgument().equals(NAMEAGEGROUP));
+        }
+        return false;
     } 
 
     public boolean isDelByNameCommand () {
-        return (this.action.equals(DEL) && getFirstArgument().equals(NAME));
+        if (args.size() == 2) {
+            return (this.action.equals(DEL) && getFirstArgument().equals(NAME));
+        }
+        return false;
     }
     
     public boolean isDelByAgeGroupCommand () {
-        return (this.action.equals(DEL) && getFirstArgument().equals(AGEGROUP));
+        if (args.size() == 2) {
+            return (this.action.equals(DEL) && getFirstArgument().equals(AGEGROUP));
+        }
+        return false;
     }
-    
 }

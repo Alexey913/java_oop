@@ -150,17 +150,17 @@ E findById (I id)
 
 ## Семинар 6
 
-**Задание 1**
+**Задача 1**
 * Создать класс Command, который бы инкапсулировал в себе содержимое введенной команды
 * Реализовать в нем булевские методы для проверки введенных команд
 * Изменить сигнатуру у интерфейса ParseCommand, чтобы он вместо массива строк начал возвращать  объект класса Command
 *  отредактировать класс CommandExecutableFactory, убрав из него хардкод и начав принимать на вход объект Command
 
-**Задание 2**
+**Задача 2**
 * Создать класс LogingCommandExecutableFactory, наследующий класс CommandExecutableFactory
 * Переопределить единственный метод так, чтобы он вызывал внутри себя метод предка, но в начале и конце распечатывал информацию о входных и выходных параметрах.
 
-**Задание 3**
+**Задача 3**
 * Переименовать класс CommandExecutableFactory в CommandExecutableFactoryImpl
 * Создать интерфейс CommandExecutableFactory и имплементировать от него класс CommandExecutableFactoryImpl
 * В классе TerminalReader реализовать DIP, то есть возможность менять реализации CommandExecutableFactory
@@ -179,7 +179,6 @@ E findById (I id)
 * Добавил метод create в интерфейс UserController, в соответствии с Принципом инверсии зависимостей (DIP)
 * UserController – удалил public abstract, т.к. в интерфейсе методы по умолчанию public abstract
 
-
 2. **Пэкэдж repository**
 * StudentGroup - исправил в переопределении StudentGroup определение teacher и listOfStudent одной строкой
 
@@ -190,3 +189,30 @@ E findById (I id)
 4. **Пэкэдж terminal**
 * В CommandExecutableFactory, DelStudentByFioExecutable, DelStudentByAgeGroupExecutable добавил зависимости переменных через конструкторы в соответствии с принципом Dependency Inversion Principle (Принцип инверсии зависимостей).
 * Корректировку на соответствие Single Responsibility Principle (Принцип единственной ответственности) произвел в рамках работы семинара 6, убрав хардкод из CommandExecutableFactory.
+
+## Ссеминар 7
+
+**Задача 1**
+
+* Создать пекедж db
+* Реализовать в нем абстрактный обобщенный класс Table, содержащий в себе переменную List<E> elements.
+* Реализовать в классе метод добавления элемента E save(E entity), который внутри себя добавляет entity в переменную elements 
+
+**Задача 2**
+
+* Создать класс StudentTable 
+* Реализовать метод удаления по имени boolean removeByName (String name), который бы удалял студента из таблицы по имени
+* Создать в классе StudentRepository зависимость класса StudentTable 
+* Вызывать метод removeByName из одноименного метода класса StudentRepository
+
+**Задача 3**
+
+* Создать реализацию CommandParser
+ Чтобы разбить строку используйте метод split()
+* Запустить приложение, вызвав метод класса TerminalReader, не забыв создать экземпляры зависимостей
+
+## Домашнее задание (семинар 7)
+
+1. Повторить задания 1,2 с семинара 7
+2. Выполнить задание 3 с семинара 7
+3. Реализовать метод save класса StudentRepository так, чтобы он в своем теле вызывал метод create класса StudentTable

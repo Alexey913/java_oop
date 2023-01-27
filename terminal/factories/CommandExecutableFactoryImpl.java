@@ -18,12 +18,12 @@ package terminal.factories;
 
 import data.Student;
 import service.StudentService;
-import terminal.Command;
+import terminal.command.Command;
 import terminal.terminalExecute.CommandExecutable;
 import terminal.terminalExecute.CreateStudentExecutable;
 import terminal.terminalExecute.DelStudentByAgeGroupExecutable;
 import terminal.terminalExecute.DelStudentByFioExecutable;
-import terminal.terminalExecute.ErrorCommand;
+import terminal.terminalExecute.WrongCommand;
 
 public class CommandExecutableFactoryImpl implements CommandExecutableFactory {
     private StudentService StudentService;
@@ -48,14 +48,17 @@ public class CommandExecutableFactoryImpl implements CommandExecutableFactory {
 // К семинару 6
     @Override
     public CommandExecutable commandForAction (Command input) {
-        if (input.isCreateCommand())
-            return new CreateStudentExecutable (StudentService, new Student(input.getFirstArgument()));
-        else if (input.isDelByNameCommand()) {
-            return new DelStudentByFioExecutable(StudentService, input.getSecondArgument());
-        }
-        else if (input.isDelByAgeGroupCommand()) {
-            return new DelStudentByAgeGroupExecutable(StudentService, input.getThirdArgument(), input.getFourthArgument());
-        }
-        else return new ErrorCommand ();
+            if (input.isCreateCommandByName())
+                return new CreateStudentExecutable (StudentService, new Student(input.getSecondArgumentStr()));
+            else if (input.isCreateCommandByNameAgeGroup())
+                return new CreateStudentExecutable (StudentService, new Student(input.getSecondArgumentStr(),
+                                                    input.getThirdArgument(), input.getFourthArgument()));
+            else if (input.isDelByNameCommand()) {
+                return new DelStudentByFioExecutable(StudentService, input.getSecondArgumentStr());
+            }
+            else if (input.isDelByAgeGroupCommand()) {
+                return new DelStudentByAgeGroupExecutable(StudentService, input.getSecondArgumentInt(), input.getThirdArgument());
+            }
+            else return new WrongCommand ();
     }
 }
