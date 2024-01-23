@@ -129,7 +129,7 @@ Create и read операции реализуются путем вызова u
 2. Проверить и отредактировать весь проект на предмет соответствия SOLID
 3. Вместе с ссылкой указать, что вы поменяли и исходя из какого принципа
 4. ** Продумать логику отображения результата выполнения команды
-* * * * * * 
+* * *
 ## Выполнение ДЗ семинара 6
 1. **Пэкэдж controller**
 * Переименовал классы GroupController и GroupStreamController в GroupControllerImpl и GroupStreamControllerImpl, соответственно.
@@ -144,7 +144,7 @@ Create и read операции реализуются путем вызова u
 4. **Пэкэдж terminal**
 * В CommandExecutableFactory, DelStudentByFioExecutable, DelStudentByAgeGroupExecutable добавил зависимости переменных через конструкторы в соответствии с принципом Dependency Inversion Principle (Принцип инверсии зависимостей).
 * Корректировку на соответствие Single Responsibility Principle (Принцип единственной ответственности) произвел в рамках работы семинара 6, убрав хардкод из CommandExecutableFactory.
-* * * * * *
+* * *
 ## Семинар 7 - ООП Дизайн и Solid ч.2
 ### Задание 1
 * Создать пекедж db
